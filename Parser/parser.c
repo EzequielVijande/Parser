@@ -23,7 +23,7 @@ int parseCmdLine(int argc, char *argv[], pCallback p, void* userData)
                                            //clave y el parametro como value.
                if(!valid)
                {
-                   return ERROR;
+                   return ERROR4;
                }
                ++ParamCounter;
             }
@@ -34,12 +34,12 @@ int parseCmdLine(int argc, char *argv[], pCallback p, void* userData)
                 {
                     if(String[1]== '\0')
                     {
-                        return ERROR; //error de forma 2, hay valor pero no hay clave.
+                        return ERROR2; //error de forma 2, hay valor pero no hay clave.
                     }
                     valid= p(String+1, argv[i], userData);
                     if(!valid)
                     {
-                        return ERROR;
+                        return ERROR4;
                     }
                     ++ParamCounter;
                             
@@ -50,9 +50,9 @@ int parseCmdLine(int argc, char *argv[], pCallback p, void* userData)
                     
                     if(String[1]== '\0')
                     {
-                        return ERROR; //error de forma 3, no hay valor ni hay clave.
+                        return ERROR3; //error de forma 3, no hay valor ni hay clave.
                     }
-                    return ERROR; //error de forma 1 hay clave, pero  no hay valor
+                    return ERROR1; //error de forma 1 hay clave, pero  no hay valor
                     
                 }
             }

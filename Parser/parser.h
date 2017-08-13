@@ -17,11 +17,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#define ERROR -1
+#define ERROR1  -1
+#define ERROR2  -2
+#define ERROR3  -3
+#define ERROR4  -4
 
 typedef int (*pCallback)(char*, char*, void *);
 
 int parseCmdLine(int argc, char *argv[], pCallback p, void* userData);
+//Funcion que recibe un arreglo de argumentos y la cantidad de los mismos 
 
 #endif /* PARSER_H */
 
